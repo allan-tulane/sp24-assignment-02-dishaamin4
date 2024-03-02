@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:**__Disha Amin_________________
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -12,54 +12,70 @@ and push to your github repository.
 
 1. Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
-.  
+  * O(n ^ log_3(2))
+  * We can apply the master method the format T(n) = aT(n/b)+f(n). In this recurrence, a = 2, b = 3, and f(n) = 1. We can now plug this into W(n) = Theta(n^log b (a)), to get an upper bound of O(n ^ log base3 (2)).
 .  
 .  
 .  
 .  
   * $W(n)=5W(n/4)+n$
-.  
+  * O(n ^ log_4 (5))
+  * We can apply the master method in the format T(n) = aT(n/b)+f(n). In this recurrence, a = 5, b = 4, and f(n) = n. We can plug these variables into T(n) = Theta(n ^ log_b (a) log ^ k n), to get Theta(n^ log_4(5)), which makes the upper bound O(n ^ log_4 (5)).
 .  
 .  
 .  
 .  
   * $W(n)=7W(n/7)+n$
+  * O(n)
+  * We can apply the master method in the format T(n) = aT(n/b)+f(n). In this recurrence, a = 7, b = 7, and f(n) = n. We can plug these into T(n) = Theta(n^log_b a * log^k n), which gives us T(n) = Theta (n^log_7 (7)) = O(n).
 .  
 .  
 .  
 .  
 .  
   * $W(n)=9W(n/3)+n^2$
+  * O(n^2 * log_3(n))
+  * We can apply the master method in the format T(n) = aT(n/b)+f(n). In this recurrence, a = 9, b = 3, and n = n^2. We can plug these into T(n) = Theta(n^log_b a * log^k n), which gives us T(n) = Theta (n^log_3 (9) * log_3(n)) = O(n^2 * log_3(n)).
 .  
 .  
 .  
 .  
 .  
   * $W(n)=8W(n/2)+n^3$
+  * O(n^3 * log_2(n))
+  * We can apply the master method in the format T(n) = aT(n/b)+f(n). In this recurrence, a = 8, b = 2, f(n) = n^3. We can plug these into T(n) = Theta(n^log_b a * log^k n), which gives us T(n) = Theta (n^ log_2 (8) * log_2(n)) = O(n^3 * log_2(n)).
 .  
 .  
 .  
 .  
 .  
   * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  
+  * O(n^3/2 * logn)
+  * We can apply the master method in the format T(n) = aT(n/b)+f(n). Here, a = 49, b = 25, and f(n) = n^3/2. We can plug this into T(n) = Theta(n^log_b a * log^k n), where k = 1. 
+  
 .  
 .  
 .  
 .  
   * $W(n)=W(n-1)+2$
+  * O(2n)
+  * If we recursively go through this recurrence, we can see that each n value will equal 2 times itself (ex. W(2) = 4, W(4) = 8). So the aymptotic upper bound for this recurrence is O(2n).
+  * 
 .  
 .  
 .  
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
+  * O(n^c)
 .  
 .  
 .  
 .  
 .  
   * $W(n)=W(\sqrt{n})+1$
+  * O(log_2(log_2(n)))
+  * Solve by substitution
 
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
@@ -79,6 +95,10 @@ and push to your github repository.
 
     What are the asymptotic running times of each of these algorithms?
     Which algorithm would you choose?
+    A - O(n ^ (log base2 (5)))
+    B - O(2^n)
+    C - O(n^2)
+    Given these runtimes, algorithm C is the most efficent runtime, so I would chose that one. 
 
 
 3. Now that you have some practice solving recurrences, let's work on
